@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket Tournament Registration</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script>
+        function validateForm(event) {
+            event.preventDefault(); // Prevent form submission
+
+            // Get form elements
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm_password').value;
+
+            // Simple validation
+            if (!username || !password || !confirmPassword) {
+                alert('Please fill in all fields.');
+                return;
+            }
+            if (password !== confirmPassword) {
+                alert('Passwords do not match.');
+                return;
+            }
+
+            // If validation passes, redirect to a success page
+            window.location.href = '/success_page.html'; // Change this to your success page URL
+        }
+
+        function togglePassword() {
+            const passwordField = document.getElementById('password');
+            const confirmPasswordField = document.getElementById('confirm_password');
+            const passwordIcon = document.getElementById('togglePassword');
+            const confirmPasswordIcon = document.getElementById('toggleConfirmPassword');
+
+            if (passwordField.type === 'password') {
+                passwordField.type = 'text';
+                passwordIcon.classList.remove('fa-eye');
+                passwordIcon.classList.add('fa-eye-slash');
+            } else {
+                passwordField.type = 'password';
+                passwordIcon.classList.remove('fa-eye-slash');
+                passwordIcon.classList.add('fa-eye');
+            }
+
+            if (confirmPasswordField.type === 'password') {
+                confirmPasswordField.type = 'text';
+                confirmPasswordIcon.classList.remove('fa-eye');
+                confirmPasswordIcon.classList.add('fa-eye-slash');
+            } else {
+                confirmPasswordField.type = 'password';
+                confirmPasswordIcon.classList.remove('fa-eye-slash');
+                confirmPasswordIcon.classList.add('fa-eye');
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Cricket Tournament Registration</h1>
+        <form id="registration_form" onsubmit="validateForm(event)">
+           
+            
+            <!-- Team Leader Authentication -->
+            <fieldset>
+                <legend>Team Leader Authentication</legend>
+
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="password">Password:</label>
+                <div class="password-container">
+                    <input type="password" id="password" name="password" required>
+                    <i id="togglePassword" class="fas fa-eye" onclick="togglePassword()"></i>
+                </div>
+                <small>Password must be at least 8 characters long, include at least one uppercase letter, one lowercase letter, one number, and one special character.</small>
+
+                <label for="confirm_password">Confirm Password:</label>
+                <div class="password-container">
+                    <input type="password" id="confirm_password" name="confirm_password" required>
+                    <i id="toggleConfirmPassword" class="fas fa-eye" onclick="togglePassword()"></i>
+                </div>
+                <small>Passwords must match.</small>
+            </fieldset>
+
+            <!-- Team Information -->
+            <fieldset>
+                <legend>Team Information</legend>
+
+                <label for="team_name">Team Name:</label>
+                <input type="text" id="team_name" name="team_name" required>
+
+                <label for="captain_name">Captain's Full Name:</label>
+                <input type="text" id="captain_name" name="captain_name" required>
+
+                <label for="coach_name">Coach's Name (if applicable):</label>
+                <input type="text" id="coach_name" name="coach_name">
+
+                <label for="team_email">Team Email Address:</label>
+                <input type="email" id="team_email" name="team_email" required>
+                <small>Email must be in a valid format (e.g., example@domain.com).</small>
+
+                <label for="team_phone">Contact Number:</label>
+                <input type="tel" id="team_phone" name="team_phone" pattern="[0-9]{10}" required>
+                <small>Phone number must be 10 digits long.</small>
+
+                <label for="team_location">Location of the Team:</label>
+                <input type="text" id="team_location" name="team_location" required>
+            </fieldset>
+
+            <!-- Player Information -->
+            <fieldset>
+                <legend>Player Details</legend>
+
+                <label for="total_players">Total Number of Players (Min 11, Max 15):</label>
+                <input type="number" id="total_players" name="total_players" min="11" max="15" required>
+
+                <label for="player_details">List of Players (Name, Age, Role):</label>
+                <textarea id="player_details" name="player_details" rows="8" cols="50" placeholder="e.g., John Doe, 20, Batsman" required></textarea>
+                <small>Use the format: Name, Age (must be under 21), Category (Batsman/Bowler/All-Rounder). You should submit your ID proof on the match day.</small>
+            </fieldset>
+
+            <!-- Tournament Preferences -->
+            <fieldset>
+                <legend>Tournament Preferences</legend>
+
+                <div class="center-content">
+                    <p>Preferred Match Format: T20</p>
+
+                    <label for="experience_level">Team Experience Level:</label>
+                    <select id="experience_level" name="experience_level" required>
+                        <option value="beginner">Beginner</option>
+                        <option value="intermediate">Intermediate</option>
+                        <option value="professional">Professional</option>
+                    </select>
+                    <small>This information is used for match fixtures purposes.</small>
+                </div>
+            </fieldset>
+
+            <!-- Payment & Waiver -->
+            <!-- Payment & Waiver -->
+<fieldset>
+    <legend>Payment & Waiver</legend>
+
+    <div class="center-content">
+        <p>Registration Fee: INR 1000 (Cash only, to be paid on the match day)</p>
+
+        <div class="agreement-container">
+            <input type="checkbox" id="waiver" name="waiver" required>
+            <label for="waiver" class="agreement-label">I agree that all players are participating at their own risk and the organizers are not responsible for any injuries.</label>
+        </div>
+    </div>
+</fieldset>
+
+
+            <!-- Additional Information -->
+            <fieldset>
+                <legend>Additional Information</legend>
+
+                <label for="comments">Additional Comments or Requests:</label>
+                <textarea id="comments" name="comments" rows="4" cols="50" placeholder="Enter any additional information or special requests here..."></textarea>
+            </fieldset>
+
+            <!-- Submit Button -->
+            <!-- Submit Button -->
+<!-- Submit Button -->
+<div class="center-button">
+    <a href="registration_successful.html" class="button">Register Team</a>
+</div>
+
+
+
+
+        </form>
+    </div>
+</body>
+</html>
