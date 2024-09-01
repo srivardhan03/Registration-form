@@ -1,0 +1,219 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: black; /* Black background for the entire page */
+    color: #ddd; /* Light text color for contrast */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    overflow: auto; /* Enable scrolling for the body */
+}
+
+.container {
+    max-width: 800px;
+    width: 100%;
+    padding: 20px;
+    background-color: #1a1a1a; /* Dark container background */
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    position: relative; /* For positioning the 3D background */
+    overflow: auto; /* Allow scrolling if necessary */
+}
+
+h1 {
+    text-align: center;
+    color: #00ff00; /* Green text color */
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 6px rgba(0, 255, 0, 0.5);
+}
+
+form {
+    width: 100%;
+}
+
+fieldset {
+    margin-bottom: 20px;
+    border: 1px solid #333;
+    padding: 20px;
+    border-radius: 8px;
+    background: rgba(26, 26, 26, 0.8);
+    backdrop-filter: blur(8px); /* Apply a blur effect for a glassy look */
+}
+
+legend {
+    font-weight: bold;
+    padding: 0 10px;
+    color: #00ff00; /* Green color for legends */
+    font-size: 1.2rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+textarea,
+select {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #333;
+    border-radius: 4px;
+    background-color: #222;
+    color: #ddd;
+    font-size: 1rem;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.password-container {
+    position: relative;
+}
+
+.password-container input {
+    padding-right: 40px;
+}
+
+.password-container i {
+    position: absolute;
+    right: 40px;
+    top: 40%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #00ff00; /* Green color for icons */
+}
+
+input[type="submit"] {
+    background-color: #00ff00; /* Green background for the submit button */
+    color: black;
+    border: none;
+    padding: 15px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+input[type="submit"]:hover {
+    background-color: #00cc00; /* Darker green on hover */
+}
+
+small {
+    display: block;
+    margin: 10px auto;
+    font-size: 0.9rem;
+    color: #ccc;
+    text-align: center; /* Center text alignment */
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="number"],
+    textarea,
+    select {
+        width: calc(100% - 20px);
+    }
+
+    input[type="submit"] {
+        font-size: 1rem;
+    }
+}
+.center-content {
+    text-align: center; /* Center-aligns all text within this div */
+}
+
+.center-content p,
+.center-content label {
+    margin: 0 auto 10px; /* Center align and add margin */
+    display: block;
+    font-size: 1rem;
+}
+
+.center-content select {
+    margin: 10px auto;
+    display: block;
+    width: auto;
+}
+
+.center-content input[type="checkbox"] {
+    margin-right: 10px;
+    vertical-align: middle; /* Aligns checkbox with text */
+}
+
+.agreement-container {
+    display: flex;
+    align-items: center; /* Vertically aligns checkbox with text */
+    justify-content: center; /* Center-aligns the checkbox and text container */
+    margin: 10px 0;
+}
+
+.agreement-label {
+    text-align: left; /* Aligns text to the left */
+    margin: 0; /* Removes default margin */
+}
+/* Center the submit button */
+.center-button {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; /* Adjust space above the button if needed */
+}
+
+.center-button input[type="submit"] {
+    background-color: #00ff00; /* Match the heading color */
+    color: black; /* Text color */
+    border: none;
+    padding: 15px 20px; /* Adjust padding */
+    font-size: 1.2rem; /* Adjust font size */
+    cursor: pointer;
+    border-radius: 8px; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Smooth color transition */
+}
+
+.center-button input[type="submit"]:hover {
+    background-color: #00cc00; /* Slightly darker green on hover */
+}
+.button {
+    display: inline-block;
+    padding: 15px 20px;
+    background-color: #00ff00; /* Green background */
+    color: black;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    text-decoration: none; /* Remove underline from link */
+}
+
+.button:hover {
+    background-color: #00cc00; /* Darker green on hover */
+}
+
